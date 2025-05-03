@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="ILoveAu - Your premier travel agency for exploring Australia and international destinations. Discover the Great Barrier Reef, Uluru, Blue Mountains, and more.">
+    <meta name="keywords" content="Australia travel, Great Barrier Reef, Uluru, Blue Mountains, travel agency, international travel">
+    <meta name="author" content="Your Name">
+    
+    <!-- Open Graph Tags for Social Media -->
+    <meta property="og:title" content="ILoveAu - Australian & International Travel Specialists">
+    <meta property="og:description" content="Discover Australia's most beautiful destinations with ILoveAu travel agency. Plan your perfect trip today!">
+    <meta property="og:image" content="images/great-barrier-reef.jpg">
+    <meta property="og:url" content="https://iloveautravel.com">
+    
+    <title>ILoveAu - Australian & International Travel Specialists</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- Add Font Awesome for the logo -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="logo">
+            <span class="logo-icon" aria-hidden="true">🦘</span>
+            <span class="logo-text">ILoveAu</span>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+            <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+        <ul class="nav-links" role="menu">
+            <li role="none"><a href="#home" role="menuitem">Home</a></li>
+            <li role="none"><a href="#australia" role="menuitem">Australian Tours</a></li>
+            <li role="none"><a href="#international" role="menuitem">International</a></li>
+            <li role="none"><a href="#calculator" role="menuitem">Trip Calculator</a></li>
+            <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero" aria-label="Welcome section">
+        <div class="hero-content">
+            <h1>Discover Australia & Beyond</h1>
+            <p>Your journey through the land down under starts here</p>
+        </div>
+    </section>
+
+    <!-- Australian Destinations Section -->
+    <section id="australia" class="destinations" aria-label="Australian destinations">
+        <h2>Explore Australia</h2>
+        <div class="destination-grid">
+            <div class="destination-card" id="dest-great-barrier-reef">
+                <a href="https://www.gbrmpa.gov.au" target="_blank" class="destination-image-link" aria-label="Visit Great Barrier Reef website">
+                    <div class="destination-image" role="img" aria-label="Great Barrier Reef coral and marine life"></div>
+                </a>
+                <div class="destination-content">
+                    <h3>Great Barrier Reef</h3>
+                    <p>Experience the world's largest coral reef system with vibrant marine life and crystal-clear waters.</p>
+                    <div class="destination-details" aria-label="Destination features">
+                        <span class="tag">Natural Wonder</span>
+                        <span class="tag">Marine Life</span>
+                        <span class="tag">Diving</span>
+                    </div>
+                </div>
+            </div>
+            <div class="destination-card" id="dest-uluru">
+                <a href="https://parksaustralia.gov.au/uluru/" target="_blank" class="destination-image-link" aria-label="Visit Uluru-Kata Tjuta website">
+                    <div class="destination-image" role="img" aria-label="Uluru-Kata Tjuta red rock and ancient Aboriginal culture"></div>
+                </a>
+                <div class="destination-content">
+                    <h3>Uluru-Kata Tjuta</h3>
+                    <p>Discover the spiritual heart of Australia with its iconic red rock and ancient Aboriginal culture.</p>
+                    <div class="destination-details" aria-label="Destination features">
+                        <span class="tag">Cultural Site</span>
+                        <span class="tag">Desert</span>
+                        <span class="tag">Sunrise Tours</span>
+                    </div>
+                </div>
+            </div>
+            <div class="destination-card" id="dest-blue-mountains">
+                <a href="https://www.nationalparks.nsw.gov.au/visit-a-park/parks/blue-mountains-national-park" target="_blank" class="destination-image-link" aria-label="Visit Blue Mountains National Park website">
+                    <div class="destination-image" role="img" aria-label="Blue Mountains wilderness, dramatic cliffs, and lush valleys"></div>
+                </a>
+                <div class="destination-content">
+                    <h3>Blue Mountains</h3>
+                    <p>Explore breathtaking wilderness, dramatic cliffs, and lush valleys just hours from Sydney.</p>
+                    <div class="destination-details" aria-label="Destination features">
+                        <span class="tag">Hiking</span>
+                        <span class="tag">Nature</span>
+                        <span class="tag">Adventure</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="view-more-container">
+            <button class="view-more-btn" data-section="australia" aria-label="View more Australian destinations">
+                <span class="btn-text">View More Destinations</span>
+                <span class="loading-spinner" hidden></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- International Destinations Section -->
+    <section id="international" class="destinations international" aria-label="International destinations">
+        <h2>International Escapes</h2>
+        <div class="destination-grid">
+            <div class="destination-card" id="int-paris">
+                <a href="#" class="destination-image-link" aria-label="Visit Paris, France website">
+                    <div class="destination-image" role="img" aria-label="Paris, France - City of Light"></div>
+                </a>
+                <div class="destination-content">
+                    <h3>Paris, France</h3>
+                    <p>Immerse yourself in the romance, art, and culture of the City of Light.</p>
+                    <div class="destination-details" aria-label="Destination features">
+                        <span class="tag">Culture</span>
+                        <span class="tag">History</span>
+                        <span class="tag">Cuisine</span>
+                    </div>
+                </div>
+            </div>
+            <div class="destination-card" id="int-bali">
+                <a href="#" class="destination-image-link" aria-label="Visit Bali, Indonesia website">
+                    <div class="destination-image" role="img" aria-label="Bali, Indonesia - Tropical paradise and rich cultural heritage"></div>
+                </a>
+                <div class="destination-content">
+                    <h3>Bali, Indonesia</h3>
+                    <p>Experience the perfect blend of tropical paradise and rich cultural heritage.</p>
+                    <div class="destination-details" aria-label="Destination features">
+                        <span class="tag">Beach</span>
+                        <span class="tag">Culture</span>
+                        <span class="tag">Wellness</span>
+                    </div>
+                </div>
+            </div>
+            <div class="destination-card" id="int-newyork">
+                <a href="#" class="destination-image-link" aria-label="Visit New York, USA website">
+                    <div class="destination-image" role="img" aria-label="New York, USA - Energy and excitement of the city that never sleeps"></div>
+                </a>
+                <div class="destination-content">
+                    <h3>New York, USA</h3>
+                    <p>Discover the energy and excitement of the city that never sleeps.</p>
+                    <div class="destination-details" aria-label="Destination features">
+                        <span class="tag">Urban</span>
+                        <span class="tag">Entertainment</span>
+                        <span class="tag">Shopping</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trip Calculator Section -->
+    <section id="calculator" class="calculator" aria-label="Trip cost calculator">
+        <h2>Trip Cost Calculator</h2>
+        <div class="calculator-container">
+            <form id="calculatorForm" aria-label="Trip cost calculation form">
+                <div class="form-group">
+                    <label for="tripType">Trip Type:</label>
+                    <select id="tripType" required aria-required="true">
+                        <option value="">Select Trip Type</option>
+                        <option value="domestic">Australian Tours</option>
+                        <option value="international">International Travel</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="destination">Destination:</label>
+                    <select id="destination" required aria-required="true">
+                        <option value="">Select Destination</option>
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="duration">Duration (days):</label>
+                    <input type="number" id="duration" min="1" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="travelers">Number of Travelers:</label>
+                    <input type="number" id="travelers" min="1" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label>Accommodation Type:</label>
+                    <select id="accommodation" required aria-required="true">
+                        <option value="budget">Budget (3⭐)</option>
+                        <option value="standard">Standard (4⭐)</option>
+                        <option value="luxury">Luxury (5⭐)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Additional Options:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" id="guide" aria-required="true"> Tour Guide</label>
+                        <label><input type="checkbox" id="insurance" aria-required="true"> Travel Insurance</label>
+                        <label><input type="checkbox" id="activities" aria-required="true"> Activities Package</label>
+                    </div>
+                </div>
+                <button type="submit" class="calculate-btn">Calculate Total Cost</button>
+            </form>
+            <div id="calculationResult" class="calculation-result">
+                <h3>Estimated Cost (AUD)</h3>
+                <p id="totalCost">$0</p>
+                <div id="costBreakdown" class="cost-breakdown"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="contact" aria-label="Contact form">
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+            <form id="contactForm" novalidate aria-label="Contact form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="inquiryType">Type of Inquiry:</label>
+                    <select id="inquiryType" name="inquiryType" aria-required="true">
+                        <option value="">Select Inquiry Type</option>
+                        <option value="australian">Australian Tours</option>
+                        <option value="international">International Travel</option>
+                        <option value="group">Group Booking</option>
+                        <option value="custom">Custom Package</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" aria-required="true"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4><span class="logo-icon">🦘</span> ILoveAu</h4>
+                <p>Your Australian adventure begins with us</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#australia">Australian Tours</a></li>
+                    <li><a href="#international">International Travel</a></li>
+                    <li><a href="#calculator">Cost Calculator</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>📍 Sydney, Australia</p>
+                <p>📞 1300 ILUVAU</p>
+                <p>✉️ info@iloveau.com.au</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ILoveAu. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("i1YF5klnA_pvBAaKs");
+        })();
+    </script>
+    <script type="module" src="scripts/script.js"></script>
+</body>
+</html>
