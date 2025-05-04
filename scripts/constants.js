@@ -1,4 +1,4 @@
-// Destination Data
+
 export const destinations = {
     domestic: {
         'Diamond Head campground': { 
@@ -66,7 +66,6 @@ export const accommodationRates = {
     }
 };
 
-// Additional Services
 export const additionalServices = {
     guide: { 
         cost: 200,

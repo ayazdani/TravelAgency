@@ -1,6 +1,5 @@
 import { destinations, accommodationRates, additionalServices, emailConfig } from './constants.js';
 
-// Initialize the page
 document.addEventListener('DOMContentLoaded', function() {
    // console.log("DOMContentLoaded");
     setupFormHandlers();
@@ -9,9 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeViewMoreButtons();
 });
 
-// Initialize destination cards with data from constants
 function initializeDestinationCards() {
-    // Initialize domestic destinations
+
     Object.entries(destinations.domestic).forEach(([key, data]) => {
         const card = document.getElementById(`dest-${key}`);
         if (card) {
@@ -31,7 +29,6 @@ function initializeDestinationCards() {
         }
     });
 
-    // Initialize international destinations
     Object.entries(destinations.international).forEach(([key, data]) => {
         const card = document.getElementById(`int-${key}`);
         if (card) {
@@ -51,22 +48,20 @@ function initializeDestinationCards() {
     });
 }
 
-// Form Handling
 function setupFormHandlers() {
+
     const tripTypeSelect = document.getElementById('tripType');
     
-    // Trip type change handler
     tripTypeSelect.addEventListener('change', (event) => {
         updateDestinationOptions(event.target.value);
     });
 
-    // Calculator form submission
     document.getElementById('calculatorForm').addEventListener('submit', (e) => {
         e.preventDefault();
         updateEstimate();
     });
 
-    // Contact form submission
+
     document.getElementById('contactForm').addEventListener('submit', handleContactSubmit);
 }
 
@@ -100,7 +95,7 @@ function updateEstimate() {
         return;
     }
 
-    // Calculate costs
+
     const basePrice = destinations[tripType][destination].cost;
     const accommodationCost = accommodationRates[accommodation].cost * duration * travelers;
     
@@ -113,7 +108,6 @@ function updateEstimate() {
 
     const totalCost = (basePrice * travelers) + accommodationCost + additionalCost;
     
-    // Update UI
     updatePriceDisplay(totalCost);
     updateCostBreakdown(basePrice, accommodationCost, additionalCost, travelers);
 }
@@ -149,28 +143,24 @@ function updateCostBreakdown(basePrice, accommodationCost, additionalCost, trave
     `;
 }
 
-// Contact Form Handler
 function handleContactSubmit(event) {
     event.preventDefault();
     
-    // Get form values
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const phone = document.getElementById('phone').value.trim();
     const inquiryType = document.getElementById('inquiryType').value;
     const message = document.getElementById('message').value.trim();
 
-    // Validate form
     if (!validateForm(name, email, inquiryType, message)) {
         return false;
     }
 
-    // Show loading state
     const submitBtn = event.target.querySelector('.submit-btn');
     submitBtn.disabled = true;
     submitBtn.innerHTML = '<span class="loading-spinner"></span> Sending...';
 
-    // Prepare template parameters
+
     const templateParams = {
         from_name: name,
         from_email: email,
@@ -181,12 +171,10 @@ function handleContactSubmit(event) {
         subject: `New Travel Inquiry - ${inquiryType}`
     };
 
-    // Send email using EmailJS
     emailjs.send(emailConfig.serviceId, emailConfig.templateId, templateParams)
     .then(() => {
-        // Show success message
+
         showNotification('success', 'Thank you! Your message has been sent successfully. We\'ll get back to you soon.');
-        // Clear form
         document.getElementById('contactForm').reset();
     })
     .catch((error) => {
@@ -194,7 +182,6 @@ function handleContactSubmit(event) {
         showNotification('error', 'Sorry, there was a problem sending your message. Please try again.');
     })
     .finally(() => {
-        // Reset button state
         submitBtn.disabled = false;
         submitBtn.innerHTML = 'Send Message';
     });
@@ -206,13 +193,11 @@ function validateForm(name, email, inquiryType, message) {
     let isValid = true;
     clearNotifications();
 
-    // Name validation
     if (!name) {
         showFieldError('name', 'Please enter your name');
         isValid = false;
     }
 
-    // Email validation
     if (!email) {
         showFieldError('email', 'Please enter your email');
         isValid = false;
@@ -221,13 +206,11 @@ function validateForm(name, email, inquiryType, message) {
         isValid = false;
     }
 
-    // Inquiry type validation
     if (!inquiryType) {
         showFieldError('inquiryType', 'Please select an inquiry type');
         isValid = false;
     }
 
-    // Message validation
     if (!message) {
         showFieldError('message', 'Please enter your message');
         isValid = false;
@@ -266,7 +249,6 @@ function showNotification(type, message) {
     
     document.querySelector('.contact-container').insertBefore(notification, document.getElementById('contactForm'));
     
-    // Remove notification after 5 seconds
     setTimeout(() => {
         notification.classList.add('fade-out');
         setTimeout(() => notification.remove(), 300);
@@ -274,13 +256,11 @@ function showNotification(type, message) {
 }
 
 function clearNotifications() {
-    // Remove all error messages and styling
     document.querySelectorAll('.field-error').forEach(error => error.remove());
     document.querySelectorAll('.error-input').forEach(input => input.classList.remove('error-input'));
     document.querySelectorAll('.notification').forEach(notif => notif.remove());
 }
 
-// Mobile Menu Setup
 function setupMobileMenu() {
     console.log("Setting up mobile menu");
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -288,13 +268,13 @@ function setupMobileMenu() {
     const menuIcon = mobileMenuBtn.querySelector('i');
 
     mobileMenuBtn.addEventListener('click', function(e) {
-        e.stopPropagation(); // Prevent click from bubbling to document
+        e.stopPropagation(); 
         navLinks.classList.toggle('active');
         menuIcon.classList.toggle('fa-bars');
         menuIcon.classList.toggle('fa-times');
     });
 
-    // Close menu when clicking outside
+    
     document.addEventListener('click', function(e) {
         if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
             navLinks.classList.remove('active');
@@ -303,7 +283,6 @@ function setupMobileMenu() {
         }
     });
 
-    // Close menu when clicking a link
     navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
@@ -330,14 +309,12 @@ async function loadMoreDestinations(section) {
     const btnText = btn.querySelector('.btn-text');
     
     try {
-        // Show loading state
+
         spinner.hidden = false;
         btnText.textContent = 'Loading...';
         
-        // Simulate loading delay (1.5 seconds)
         await new Promise(resolve => setTimeout(resolve, 1500));
         
-        // Add message to the grid
         const grid = section.querySelector('.destination-grid');
         const message = document.createElement('div');
         message.className = 'info-message';
@@ -348,7 +325,6 @@ async function loadMoreDestinations(section) {
         `;
         grid.appendChild(message);
         
-        // Hide the View More button
         btn.style.display = 'none';
         
     } catch (error) {
