@@ -51,10 +51,12 @@ A modern, responsive travel agency website showcasing Australian and internation
 
 ```
 TravelAgency/
-├── images/                 # Local destination images
-│   ├── great-barrier-reef.jpg
-│   ├── uluru.jpg
-│   └── blue-mountains.jpg
+├── images/                 # Project images
+│   ├── diamond-head.jpg   # Diamond Head Campground destination
+│   ├── hero.jpg          # Hero section background
+│   ├── jervisbay.jpg     # Jervis Bay Holiday Park destination
+│   ├── logo.png          # Website logo
+│   └── west-head.jpg     # West Head Lookout destination
 ├── scripts/
 │   ├── script.js          # Main JavaScript file
 │   └── constants.js       # Configuration and data
@@ -72,11 +74,6 @@ TravelAgency/
 - Keep JavaScript modular using ES6 modules
 - Update constants.js for any data changes
 
-## 🔒 Security Notes
-
-- Keep your EmailJS keys secure
-- Don't commit sensitive information
-- Use environment variables for production
 
 ## 🌐 Browser Support
 
@@ -91,21 +88,10 @@ TravelAgency/
 - Tablet: 768px - 1024px
 - Desktop: > 1024px
 
-## 🤝 Contributing
 
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a new Pull Request
+## 👥 Author
 
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 👥 Authors
-
-- Your Name - Initial work
+- Arezoo Yazdani
 
 ## 🙏 Acknowledgments
 
@@ -113,12 +99,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Icons from Font Awesome
 - EmailJS for form functionality 
 
-<meta name="description" content="ILoveAu - Your premier travel agency for exploring Australia and international destinations...">
-<meta property="og:title" content="ILoveAu - Australian & International Travel Specialists"> 
-
-<nav class="navbar" role="navigation" aria-label="Main navigation">
-<button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
-</nav> 
 
 The website features a carefully curated selection of six destination cards, equally divided between Australian and international locations. This number was chosen deliberately to:
 

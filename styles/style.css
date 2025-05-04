@@ -1,7 +1,6 @@
-/* Custom Color Variables */
 :root {
-    --primary-color: #006B3F;    /* Australian green */
-    --secondary-color: #FFC40C;  /* Australian gold */
+    --primary-color: #006B3F;    
+    --secondary-color: #FFC40C;  
     --text-dark: #2D2D2D;
     --text-light: #FFFFFF;
     --bg-light: #F5F5F5;
@@ -9,7 +8,6 @@
     --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
-/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -23,7 +21,6 @@ body {
     background-color: var(--bg-light);
 }
 
-/* Logo Styles */
 .logo {
     display: flex;
     align-items: center;
@@ -33,17 +30,22 @@ body {
     color: var(--primary-color);
 }
 
-.logo-icon {
-    font-size: 2rem;
-    animation: bounce 2s infinite;
+.logo-img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
+.logo:hover .logo-img {
+    transform: scale(1.1);
 }
 
-/* Navigation Bar */
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
 .navbar {
     position: fixed;
     top: 0;
@@ -70,21 +72,33 @@ body {
     color: var(--text-dark);
     font-weight: 600;
     font-size: 1rem;
-    transition: color 0.3s;
+    transition: color 0.3s, background-color 0.3s;
     padding: 0.5rem 1rem;
     border-radius: 4px;
+    position: relative;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--primary-color);
     background-color: var(--bg-light);
 }
 
-/* Hero Section */
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), /* Dark overlay for better text readability */
-                url('../images/hero-background.jpg') center/cover; /* Replace with your image path */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url('../images/hero.jpg') center/cover; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -95,14 +109,14 @@ body {
 .hero-content {
     max-width: 800px;
     padding: 0 2rem;
-    z-index: 2; /* Ensure text stays above the background */
+    z-index: 2; 
 }
 
 .hero-content h1 {
     font-size: 4rem;
     margin-bottom: 1.5rem;
     line-height: 1.2;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow for better readability */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
 }
 
 .hero-content p {
@@ -111,10 +125,18 @@ body {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-/* Destinations Section */
+
 .destinations {
-    padding: 8rem 2rem;
+    padding: 4rem 2rem;  
     background-color: white;
+    min-height: 100vh;  /* Ensure full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.destinations.international {
+    background-color: var(--bg-light);  /* Different background for contrast */
 }
 
 .destinations h2 {
@@ -225,30 +247,28 @@ body {
     background-color: var(--secondary-color);
 }
 
-/* Add specific background images for destinations */
-#dest1 {
-    background-image: url('../images/great-barrier-reef.jpg');
+#diamond-head-campground .destination-image {
+    background-image: url('../images/diamond-head.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
-#dest2 {
-    background-image: url('../images/uluru.jpg');
+#jervisbay-holiday-park .destination-image {
+    background-image: url('../images/jervisbay.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
-#dest3 {
-    background-image: url('../images/blue-mountains.jpg');
+#west-head-lookout .destination-image {
+    background-image: url('../images/west-head.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
-/* Keep international destination images */
-#int1 {
-    background-image: url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1600&h=900&q=80');
-}
-
-#int2 {
-    background-image: url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1600&h=900&q=80');
-}
-
-#int3 {
-    background-image: url('https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=1600&h=900&q=80');
+#int-newyork .destination-image {
+    background-image: url('../images/newyork.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 /* Calculator Section */
@@ -392,7 +412,6 @@ textarea {
     resize: vertical;
 }
 
-/* Submit Button Styles */
 .submit-btn {
     background: white;
     color: var(--primary-color);
@@ -422,7 +441,7 @@ textarea {
 
 /* Footer */
 footer {
-    background: var(--primary-color);
+    background: #0E2A35;
     color: var(--text-light);
     padding: 4rem 2rem 2rem;
 }
@@ -435,11 +454,121 @@ footer {
     gap: 3rem;
 }
 
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.footer-section h4 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.footer-section p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-section ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: var(--secondary-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.social-links a {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
 .footer-bottom {
     text-align: center;
     margin-top: 3rem;
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Footer Responsive Styles */
+@media (max-width: 1024px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+
+    .footer-section {
+        align-items: flex-start;
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 3rem 1.5rem 1.5rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-section {
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .footer-section h4 {
+        justify-content: center;
+    }
+
+    .social-links {
+        justify-content: center;
+        margin-top: 0;
+    }
+
+    .footer-bottom {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+    }
+
+    .contact-info {
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .location {
+        justify-content: center;
+        margin-bottom: 0;
+    }
 }
 
 /* Mobile Menu Button */
@@ -471,6 +600,24 @@ footer {
 
     .logo {
         font-size: 1.5rem;
+    }
+
+    .destination-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 1rem;
+    }
+
+    .destinations {
+        background-color: transparent;  /* Remove background */
+        padding: 4rem 1rem;
+    }
+
+    .destinations.international {
+        background-color: transparent;  /* Remove background */
+    }
+
+    .calculator-container {
+        padding: 1.5rem;
     }
 }
 
@@ -534,8 +681,7 @@ footer {
     }
     
     .destination-grid {
-        grid-template-columns: 1fr;
-        padding: 0 1rem;
+        grid-template-columns: 1fr;  /* Single column for mobile */
     }
 
     .destination-card {
@@ -585,8 +731,9 @@ footer {
         font-size: 1.3rem;
     }
 
-    .logo-icon {
-        font-size: 1.8rem;
+    .logo-img {
+        width: 30px;
+        height: 30px;
     }
 
     .hero-content h1 {
@@ -774,22 +921,6 @@ textarea:invalid {
     display: inline-block;
 }
 
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 .fade-out {
     opacity: 0;
@@ -797,7 +928,6 @@ textarea:invalid {
     transition: all 0.3s ease;
 }
 
-/* Form Error Styles */
 .field-error {
     color: #c62828;
     font-size: 0.875rem;
@@ -845,10 +975,7 @@ textarea:invalid {
     animation: fadeIn 0.5s ease-in;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+
 
 .info-message {
     grid-column: 1 / -1;
@@ -858,4 +985,68 @@ textarea:invalid {
     border-radius: 8px;
     margin: 1rem 0;
     animation: fadeIn 0.5s ease-in;
+}
+
+.social-links {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    opacity: 1;
+    color: var(--secondary-color);
+}
+
+.social-links .fa-youtube:hover {
+    color: #FF0000;
+}
+
+.social-links .fa-instagram:hover {
+    color: #E4405F;
+}
+
+.footer-section h4 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-logo-img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
 }

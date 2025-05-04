@@ -1,28 +1,28 @@
 // Destination Data
 export const destinations = {
     domestic: {
-        'great-barrier-reef': { 
-            cost: 800,
-            activities: ['Snorkeling', 'Diving', 'Glass Bottom Boat'],
-            description: 'World Heritage marine park',
-            image: '../images/great-barrier-reef.jpg',
-            website: 'https://www.gbrmpa.gov.au',
-            tags: ['Natural Wonder', 'Marine Life', 'Diving']
+        'Diamond Head campground': { 
+            cost: 49.2,
+            activities: ['Mermaid lookout track', 'Diving', 'Ocean view'],
+            description: 'The beachside campground at Diamond Head',
+            image: '../images/diamond-head.jpg',
+            website: 'https://www.nationalparks.nsw.gov.au/camping-and-accommodation/campgrounds/diamond-head-campground',
+            tags: ['National Parks', 'Kangaroo', 'Picnic']
         },
-        'uluru': { 
-            cost: 700,
-            activities: ['Cultural Tours', 'Sunrise Viewing', 'Desert Walks'],
-            description: 'Sacred Aboriginal site',
-            image: '../images/uluru.jpg',
-            website: 'https://parksaustralia.gov.au/uluru/',
-            tags: ['Cultural Site', 'Desert', 'Sunrise Tours']
+        'Jervisbay Holiday Park': { 
+            cost: 86,
+            activities: ['Kayak', 'Sunrise Viewing', 'Swimming pool'],
+            description: 'well-maintained, unspoilt, privately owned park on a crystal clear waterway accessing Jervis Bay',
+            image: '../images/jervisbay.jpg',
+            website: 'https://jervisbayholidaypark.com.au/',
+            tags: ['Pet Friendly', 'Private Boat', 'BBQ']
         },
-        'blue-mountains': { 
-            cost: 400,
-            activities: ['Hiking', 'Rock Climbing', 'Scenic Railway'],
+        'West Head lookout': { 
+            cost: 12,
+            activities: ['Hiking', 'Rock Climbing', 'Lookout'],
             description: 'Stunning mountain wilderness',
-            image: '../images/blue-mountains.jpg',
-            website: 'https://www.nationalparks.nsw.gov.au/visit-a-park/parks/blue-mountains-national-park',
+            image: '../images/west-head.jpg',
+            website: 'https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/west-head-lookout',
             tags: ['Hiking', 'Nature', 'Adventure']
         }
     },
@@ -51,7 +51,6 @@ export const destinations = {
     }
 };
 
-// Accommodation Rates
 export const accommodationRates = {
     'budget': { 
         cost: 50,
@@ -83,7 +82,6 @@ export const additionalServices = {
     }
 };
 
-// Email Configuration
 export const emailConfig = {
     serviceId: 'service_p0a0231',
     templateId: 'template_tq13eto',
